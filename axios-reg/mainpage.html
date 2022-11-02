@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MainPage</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
+</head>
+<body>
+    <h1>this is main page</h1>
+    <script>
+var token = JSON.parse(localStorage.getItem("data")).jwtToken;
+const config = {
+            method: 'get',
+            url: 'http://localhost:4000/accounts',
+            headers: {
+                "Content-type": "application/json; charset=UTF-8",
+                "Authorization": `Bearer ${token}`
+            }
+        }
+        axios(config).then( y => {
+            console.log(y)
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// var token = JSON.parse(localStorage.getItem("data"));
+// // var tokan = data.id;
+
+// // axios.get("http://localhost:4000/accounts",{
+   
+// //     headers: {
+// //         "Content-type": "application/json; charset=UTF-8",
+// //         "Authorization": `Bearer` + token.jwtToken,
+// //     }
+
+// // }).then(res => {
+// // console.log(res)
+// // });
+
+
+
+
+
+    //     const api = 'http://localhost:4000/accounts'; 
+    // const token = JSON.parse(localStorage.getItem('user'));
+    // // const token = user.data.id; /*take only token and save in token variable*/
+    // axios.get(api , { headers: {"Authorization" : `Bearer`+ token.jwtToken} })
+    // .then(res => {
+    // console.log(res.data)});
+    </script>
+    <script src="login2.js"></script>
+</body>
+</html>

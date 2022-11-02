@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css" rel="stylesheet" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="vh-100" style="background-color: #eee;">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-lg-12 col-xl-11">
+                    <div class="card text-black" style="border-radius: 25px;">
+                        <div class="card-body p-md-5">
+                            <div class="row justify-content-center">
+                                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+
+                                    <form class="mx-1 mx-md-4">
+
+                                        <div class="d-flex flex-col align-items-center">
+                                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <input type="text" id="form3Example0c" class="form-control"
+                                                    onkeypress="resTitle(event)" onchange="checkTitle()" />
+                                                <label class="form-label" for="form3Example0c">Title</label>
+                                            </div>
+                                        </div>
+                                        <p id="title"></p>
+
+                                        <div class="d-flex flex-col align-items-center">
+                                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <input type="text" id="form3Example1c" class="form-control"
+                                                    onkeypress="resFirstName(event)" onchange="checkFirstName()" />
+                                                <label class="form-label" for="form3Example1c">FirstName</label>
+                                            </div>
+                                        </div>
+                                        <p id="firstName"></p>
+
+                                        <div class="d-flex flex-col align-items-center">
+                                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <input type="text" id="form3Example2c" class="form-control"
+                                                    onkeypress="resLastName(event)" onchange="checkLastName()" />
+                                                <label class="form-label" for="form3Example2c">LastName</label>
+                                            </div>
+                                        </div>
+                                        <p id="lastName"></p>
+
+                                        <div class="d-flex flex-row align-items-center">
+                                            <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <input type="email" id="form3Example3c" class="form-control"
+                                                    onkeypress="resEmail(event)" onchange="checkEmail(event)" />
+                                                <label class="form-label" for="form3Example3c">Email</label>
+                                            </div>
+                                        </div>
+                                        <p id="email"></p>
+
+                                        <div class="d-flex flex-row align-items-center">
+                                            <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <input type="password" id="form3Example4c" class="form-control"
+                                                    onkeypress="resPassword(event)" onchange="checkPassword(event)" />
+                                                <label class="form-label" for="form3Example4c">Password</label>
+                                            </div>
+                                        </div>
+                                        <p id="password"></p>
+
+                                        <div class="d-flex flex-row align-items-center">
+                                            <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <input type="password" id="form3Example4cd" class="form-control"
+                                                    onkeypress="resConfPassword(event)"
+                                                    onchange="checkConfPassword(event)" />
+                                                <label class="form-label" for="form3Example4cd">Repeat your
+                                                    password</label>
+                                            </div>
+                                        </div>
+                                        <p id="confirmPassword"></p>
+
+                                        <div class="form-check d-flex justify-content-center mb-4">
+                                            <input class="form-check-input me-2" type="checkbox" value=""
+                                                id="form2Example3c" />
+                                            <label class="form-check-label" for="form2Example3">
+                                                I agree all statements in <a href="#!">Terms of service</a>
+                                            </label>
+                                        </div>
+
+                                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                            <button type="button" class="btn btn-primary btn-lg"
+                                                onclick="saveData()">Register</button>
+                                        </div>
+
+                                        <div class="form-check d-flex justify-content-center mb-4">
+                                            <label class="form-check-label" for="form2Example3a">
+                                                Have already an account? <a href="login.html">Login here</a>
+                                            </label>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+                                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                                        class="img-fluid" alt="Sample image">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+</body>
+<!-- MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.js"></script>
+
+<script>
+    // ************************validation code start****************************
+
+    function resTitle(event) {
+        var theEvent = event || window.event;
+
+        var key = theEvent.keyCode || theEvent.which;
+
+        if ((key >= 65 && key <= 90) || (key >= 97 && key <= 122)) {
+
+        }
+        else {
+            theEvent.returnValue = false;
+        }
+        console.log(theEvent);
+    }
+
+    function checkTitle(event) {
+        var leng = document.getElementById("form3Example0c").value.length;
+
+        if (leng >= 1 && leng <= 5) {
+            document.getElementById("title").innerHTML = ""
+        }
+        else {
+            document.getElementById("title").innerHTML = "length should be between 1-5 character"
+        }
+    }
+
+    function resFirstName(event) {
+        var theEvent = event || window.event;
+
+        var key = theEvent.keyCode || theEvent.which;
+
+        if ((key >= 65 && key <= 90) || (key >= 97 && key <= 122)) {
+
+        }
+        else {
+            theEvent.returnValue = false;
+        }
+        console.log(theEvent);
+    }
+
+    function checkFirstName() {
+        var leng = document.getElementById("form3Example1c").value.length;
+
+        if (leng >= 2 && leng <= 15) {
+            document.getElementById("firstName").innerHTML = ""
+        }
+        else {
+            document.getElementById("firstName").innerHTML = "length should be between 2-15 character"
+        }
+    }
+
+    function resLastName(event) {
+        var theEvent = event || window.event;
+
+        var key = theEvent.keyCode || theEvent.which;
+
+        if ((key >= 65 && key <= 90) || (key >= 97 && key <= 122)) {
+
+        }
+        else {
+            theEvent.returnValue = false;
+        }
+        console.log(theEvent);
+    }
+
+    function checkLastName() {
+        var leng = document.getElementById("form3Example2c").value.length;
+
+        if (leng >= 2 && leng <= 15) {
+            document.getElementById("lastName").innerHTML = ""
+        }
+        else {
+            document.getElementById("lastName").innerHTML = "length should be between 2-15 character"
+        }
+    }
+
+    function resEmail(event) {
+        var theEvent = event || window.event;
+        var key = theEvent.keyCode || theEvent.which;
+        if ((key >= 65 && key <= 90) || (key >= 97 && key <= 122) || (key >= 48 && key <= 57) || (key == 64 || key == 46)) {
+
+        }
+        else {
+            theEvent.returnValue = false;
+        }
+    }
+
+    function checkEmail(event) {
+        var data = document.getElementById("form3Example3c").value;
+        var special = 0;
+        for (let i = 0; i < data.length; i++) {
+            var ascii = data.charCodeAt(i);
+            if (ascii == 64 || ascii == 46) {
+                ++special;
+            }
+        }
+
+        if (data.charCodeAt(0) == 64 || (!(data.charAt(data.length - 4) == '.' || data.charAt(data.length - 3) == '.')) || (data.charAt(data.indexOf('.') - 1) == '@') || special != 2) {
+            document.getElementById("email").innerHTML = "invalid email"
+        }
+        else if (data.length >= 6 && data.length <= 255) {
+            document.getElementById("email").innerHTML = ""
+        }
+        else {
+            document.getElementById("email").innerHTML = "invalid email"
+        }
+    }
+
+    function resPassword(event) {
+        var theEvent = event || window.event;
+        var key = theEvent.keyCode || theEvent.which;
+
+        if (key != 32) {
+
+        }
+        else {
+            theEvent.returnValue = false;
+        }
+    }
+
+    function checkPassword(event) {
+
+        var data = document.getElementById("form3Example4c").value;
+
+        var capital = 0;
+        var small = 0;
+        var number = 0;
+        var special = 0;
+        for (let i = 0; i < data.length; i++) {
+            var ascii = data.charCodeAt(i);
+
+            if (ascii >= 65 && ascii <= 90) {
+                ++capital;
+            }
+            else if (ascii >= 97 && ascii <= 122) {
+                ++small;
+            }
+            else if (ascii >= 48 && ascii <= 57) {
+                ++number;
+            }
+            else if ((ascii >= 32 && ascii <= 47) || (ascii >= 58 && ascii <= 64) || (ascii >= 91 && ascii <= 96) || (ascii >= 123 && ascii <= 126)) {
+                ++special;
+            }
+        }
+
+        if (capital > 0 && small > 0 && number > 0 && special > 0 && (data.length >= 6 && data.length <= 16)) {
+            document.getElementById("password").innerHTML = ""
+        }
+        else {
+            document.getElementById("password").innerHTML = "password must contain 1 special,1 capital,1 small,1 number character and length should be between 6-16 character"
+        }
+
+    }
+
+    function resConfPassword(event) {
+        var theEvent = event || window.event;
+        var key = theEvent.keyCode || theEvent.which;
+
+        if (key != 32) {
+
+        }
+        else {
+            theEvent.returnValue = false;
+        }
+    }
+
+    function checkConfPassword(event) {
+        var pass = document.getElementById("form3Example4c").value;
+        var confPass = document.getElementById("form3Example4cd").value;
+        if (pass === confPass) {
+            document.getElementById("confirmPassword").innerHTML = "";
+        }
+        else {
+            document.getElementById("confirmPassword").innerHTML = "password do not match!";
+        }
+    }
+
+    // ****************************validation code ends*************************
+
+
+    // ****************************local storage code start******************************
+
+    function saveData() {
+
+        var tit = document.getElementById("form3Example0c").value;
+        var cTitle = document.getElementById("title").innerHTML;
+
+        var fname = document.getElementById("form3Example1c").value;
+        var cFName = document.getElementById("firstName").innerHTML;
+
+        var lname = document.getElementById("form3Example2c").value;
+        var cLName = document.getElementById("lastName").innerHTML;
+
+        var em = document.getElementById("form3Example3c").value;
+        var cEm = document.getElementById("email").innerHTML;
+
+        var psw = document.getElementById("form3Example4c").value;
+        var cPsw = document.getElementById("password").innerHTML;
+
+        var conPsw = document.getElementById("form3Example4cd").value;
+        var cConPsw = document.getElementById("confirmPassword").innerHTML;
+
+        var checkBox = document.getElementById("form2Example3c");
+
+
+
+        if ((tit != "") && (cTitle == "") && (fname != "") && (cFName == "") && (lname != "") && (cLName == "") && (em != "") && (cEm == "") && (psw != "") && (cPsw == "") && (conPsw != "") && (cConPsw == "") && (checkBox.checked == true)) {
+
+            var obj = {
+                title: tit,
+                firstName: fname,
+                lastName: lname,
+                email: em,
+                password: psw,
+                confirmPassword: conPsw,
+                acceptTerms: true
+            }
+            fetch("http://localhost:4000/accounts/register", {
+                method: "POST",
+                body: JSON.stringify(obj),
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8"
+                }
+            }).then(y => y.json()).then(y => {
+                console.log(y);
+            })
+
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>
